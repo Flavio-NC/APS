@@ -24,4 +24,3 @@ Requisitos não funcionais/requisitos do sistema:
     – manter o sistema em funcionamento
     – segurança dos dados e de acesso
     – sistema simples de entendimento
-    
