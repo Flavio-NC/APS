@@ -24,3 +24,274 @@ Requisitos não funcionais/requisitos do sistema:
     – manter o sistema em funcionamento
     – segurança dos dados e de acesso
     – sistema simples de entendimento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 - Verificar Abastecimentos
+Ator: Cliente
+Fluxo normal:
+1) Realizar Login
+2) Cliente informa data de início e data de fim
+3) Cliente informa posto de combustível
+4) Cliente informa valor mínimo e máximo de abastecimento
+5) Sistema efetua pesquisa
+6) Sistema permite cliente efetuar nova pesquisa
+Extensões:
+2a) Se cliente não informar data de início e data de fim, pegar data de 1º de Janeiro do
+ano atual até o dia de hoje, respectivamente
+3a) Listar todos os postos de combustíveis cadastrados e listados como ativos
+3b) Permitir cliente escolher mais de um posto
+3c) Caso cliente não escolha posto de combustível, listar todos os abastecimentos de
+todos os postos
+4a) Permitir apenas valores numéricos
+
+2 - Registrar itens do Posto
+Ator: Dono
+Fluxo normal:
+1) Realizar Login
+2) O Dono seleciona a opção &quot;Registrar Itens&quot;.
+3) O sistema exibe a lista de itens disponíveis no posto de gasolina.
+4) O Dono seleciona o item que deseja registrar.
+5) O Dono informa o nome, preço, quantidade e outros detalhes relevantes
+sobre o item.
+6) O sistema armazena as informações do item no banco de dados do posto
+de gasolina.
+Extensões:
+2a) Se o Dono informar um posto inexistente, o sistema alerta sobre esse erro
+3a) Se o Dono encontrar alguma informação incorreta sobre um item existente, ele
+pode editar as informações no sistema.
+
+3 - Solicitar reabastecimento de combustível
+Ator: Dono
+Fluxo normal:
+1) Realizar Login
+2) O sistema exibe as informações do estoque atual de combustíveis, como
+tipo de combustível e quantidade disponível.
+3) O Dono verifica se a quantidade de um determinado tipo de combustível
+está abaixo do nível mínimo de estoque.
+4) O Dono seleciona a opção de solicitar reabastecimento de combustível para
+esse tipo de combustível
+5) O sistema exibe um formulário para preenchimento das informações
+necessárias para solicitação, como quantidade de combustível a ser solicitada,
+fornecedor, data e hora de entrega.
+6) O Dono preenche as informações necessárias e envia a solicitação de
+reabastecimento.
+7) O sistema registra a solicitação e notifica o fornecedor do pedido de
+reabastecimento.
+8) O fornecedor confirma a entrega do combustível e o sistema registra a
+entrada do novo estoque de combustível.
+9) O Dono verifica que o estoque de combustível foi reabastecido.
+Extensões:
+2a) Se o fornecedor não puder atender à solicitação, o Dono deve procurar outro
+fornecedor ou alterar a quantidade de combustível solicitada.
+3a) Se a entrega do combustível atrasar, o sistema deve notificar o Dono do posto de
+gasolina para que ele possa tomar medidas alternativas, como pedir um empréstimo
+de combustível de outro posto.
+4a) Se o Dono preencher a data ou fornecedor de uma forma errada, o sistema deve
+avisá-lo e não deixando prosseguir.
+
+4 - Acompanhar Fluxo de Caixa
+Ator: Dono
+Fluxo normal:
+1) Realizar Login
+2) O sistema exibe as informações sobre as receitas, despesas e saldo atual
+do caixa
+3) O Dono pode visualizar o detalhamento das receitas, que incluem a venda
+de combustíveis, produtos, serviços, entre outros.
+4) O Dono pode visualizar o detalhamento das despesas, que incluem custos
+com aquisição de combustíveis, salários dos funcionários, manutenções em
+equipamentos e outras despesas.
+5) O Dono pode realizar análises de fluxo de caixa, comparando as receitas e
+despesas em diferentes períodos de tempo.
+6) O Dono pode tomar decisões com base nas informações do fluxo de caixa,
+como ajustar os preços dos produtos e serviços oferecidos ou reduzir as
+despesas para aumentar a lucratividade do posto.
+7) O sistema registra todas as informações de receitas e despesas do posto e
+mantém atualizado o saldo do caixa.
+Extensões:
+2a) Se houver diferença entre o saldo do caixa e as informações registradas no
+sistema, o Dono deve realizar uma auditoria financeira para identificar possíveis erros
+ou fraudes.
+
+5 - Realizar pagamento de combustível
+Ator: Cliente
+Fluxo normal:
+1) O cliente se dirige ao caixa ou terminal de pagamento do posto de gasolina.
+2) O sistema exibe as informações do abastecimento, como tipo de
+combustível, quantidade abastecida e valor total a ser pago.
+3) O cliente confirma as informações do abastecimento e seleciona o meio de
+pagamento desejado.
+4) Se o cliente optar por pagar com dinheiro, o caixa do posto de gasolina
+recebe o pagamento e emite o recibo de pagamento.
+5) Se o cliente optar por pagar com cartão, ele insere ou aproxima o cartão no
+terminal de pagamento e fornece as informações necessárias, como senha.
+6) O sistema processa o pagamento e emite o recibo de pagamento.
+Extensões:
+2a) Se o cliente tiver um problema com o meio de pagamento, como um cartão
+bloqueado ou sem saldo, ele deve resolver o problema antes de realizar o pagamento.
+3a) Se o cliente desejar solicitar uma nota fiscal, ele deve informar o atendente do
+posto de gasolina e o sistema deve gerar a nota fiscal correspondente ao pagamento.
+
+6 - Abastecimento de Veículos
+Ator: Frentista
+Fluxo normal:
+1) Realizar Login
+2) O frentista pergunta ao cliente qual o tipo de combustível que deseja
+abastecer.
+3) O frentista identifica o tipo de combustível escolhido pelo cliente e seleciona
+a bomba correspondente.
+4) O frentista pergunta ao cliente qual a quantidade de combustível a ser
+abastecida.
+5) O frentista inicia o abastecimento e monitora o fluxo de combustível.
+6) O frentista encerra o abastecimento quando a quantidade solicitada pelo
+cliente é atingida ou quando o tanque do veículo está cheio.
+7) O frentista informa o valor a ser pago pelo cliente com base na quantidade
+de combustível abastecida e no preço do combustível.
+8) O cliente realiza o pagamento.
+9) O frentista emite o comprovante de pagamento e o entrega ao cliente.
+10) O frentista registra a transação no sistema como concluída.
+Extensões:
+2a) Se a bomba de combustível não estiver funcionando corretamente, o frentista pode
+redirecionar o cliente para outra bomba ou entrar em contato com a manutenção para
+solucionar o problema
+3a) Se o cliente tiver alguma dúvida sobre o tipo de combustível a ser utilizado, o
+frentista pode fornecer informações.
+4a) Se o cliente não tiver dinheiro ou cartão de crédito, o frentista pode oferecer a
+opção de pagamento por cheque.
+
+7 - Troca de Óleo e Outros Serviços
+Ator: Frentista
+Fluxo normal:
+1) O frentista pergunta ao cliente quais serviços ele deseja realizar.
+2) O frentista verifica a disponibilidade dos serviços solicitados e informa ao
+cliente o tempo de espera estimado.
+3) O cliente decide quais serviços deseja realizar e autoriza o início dos
+serviços.
+4) O frentista realiza os serviços solicitados pelo cliente, como troca de óleo,
+limpeza de vidros, calibração de pneus e outros.
+5) O frentista informa ao cliente quando os serviços foram concluídos e o valor
+a ser pago pelos serviços prestados.
+6) O cliente realiza o pagamento.
+7) O frentista emite o comprovante de pagamento e o entrega ao cliente.
+8) frentista registra a transação no sistema como concluída.
+Extensões:
+2a) Se o cliente tiver alguma dúvida sobre o tipo de combustível a ser utilizado, o
+frentista pode fornecer informações.
+3a) Se o cliente precisar realizar serviços adicionais que não foram solicitados
+anteriormente, o frentista pode oferecer os serviços e informar o valor adicional a ser
+pago.
+4a) Se os equipamentos ou ferramentas necessárias para a realização dos serviços
+estiverem quebrados ou danificados, o frentista pode informar ao cliente sobre a
+impossibilidade de realizar os serviços solicitados e sugerir outras opções.
+
+8 - Cadastro de Clientes
+Ator: Frentista
+Fluxo normal:
+
+1) O frentista solicita ao cliente informações pessoais, como nome completo,
+CPF, RG, endereço e telefone de contato.
+2) O frentista registra as informações no sistema de cadastro de clientes.
+3) O frentista pergunta ao cliente se ele deseja se cadastrar em algum
+programa de fidelidade ou de benefícios oferecido pelo posto de gasolina.
+4) Se o cliente concordar em se cadastrar em algum programa, o frentista
+coleta as informações adicionais necessárias e registra no sistema.
+5) O cliente confirma as informações coletadas e autoriza o cadastro no
+sistema.
+6) O frentista emite um cartão de fidelidade ou um número de registro para o
+cliente.
+7) O frentista registra a transação no sistema como concluída.
+Extensões:
+2a) Se o cliente não desejar se cadastrar no sistema, o frentista pode oferecer a opção
+de se cadastrar em outra oportunidade ou continuar utilizando o posto de gasolina sem
+o cadastro.
+3a) Se o frentista identificar algum erro ou inconsistência nas informações fornecidas
+pelo cliente, ele deve solicitar a correção ou a confirmação dos dados para evitar
+problemas futuros.
+
+4a) Se o cliente tiver alguma dúvida sobre o tipo de combustível a ser utilizado, o
+frentista pode fornecer informações.
+
+9 - Cadastro de funcionários e dependentes
+Ator: Dono
+Fluxo normal:
+1) O Dono realiza login
+2) O Dono seleciona a opção &quot;Cadastro de Funcionários&quot; no menu principal do
+sistema.
+3) O sistema exibe um formulário de cadastro de funcionários.
+4) O Dono preenche os campos do formulário com as informações do
+funcionário, incluindo nome, endereço, telefone, e-mail, data de admissão,
+cargo e salário.
+5) O sistema exibe um formulário de cadastro de dependentes.
+6) O gerente preenche os campos do formulário com as informações do
+dependente, incluindo nome, data de nascimento, grau de parentesco e
+informações de contato.
+7) O Dono repete os passos 5 a 7 para cada dependente do funcionário.
+8) O Dono clica em &quot;Salvar&quot; para registrar as informações do funcionário e
+seus dependentes no sistema.
+9) O sistema exibe uma mensagem de confirmação indicando que o cadastro
+foi concluído com sucesso.
+Extensões:
+2a) Se o funcionário já estiver cadastrado no sistema, o gerente pode selecionar a
+opção &quot;Editar Funcionário&quot; para atualizar as informações existentes.
+3a) Se o dependente já estiver cadastrado no sistema, o gerente pode selecionar a
+opção &quot;Editar Dependente&quot; para atualizar as informações existentes.
+4a) Se houver um erro no preenchimento do formulário, o sistema exibe uma
+mensagem de erro indicando o campo que precisa ser corrigido. O gerente deve
+corrigir o erro e clicar em salvar novamente.
+5a) Se ocorrer algum erro durante o cadastro, o sistema exibe uma mensagem de erro
+indicando o problema. O gerente deve corrigir o problema e tentar novamente.
+
+10 - Cadastro de Postos de Gasolina
+Ator: Dono
+Fluxo normal:
+1) O Dono realiza login
+2) O sistema exibe um formulário com os campos necessários para o cadastro
+do posto: Nome do posto, endereço completo (rua, número, bairro, cidade,
+estado, CEP), Telefone, E-mail,
+3) O Dono preenche o formulário com as informações do posto
+4) O sistema valida os campos preenchidos e verifica se já existe um posto
+cadastrado com o mesmo nome e endereço
+5) Se as informações estiverem corretas, o sistema cadastra o novo posto de
+gasolina e exibe uma mensagem de sucesso
+6) Caso contrário, o sistema exibe uma mensagem de erro informando o
+problema encontrado e solicita que o Administrador do Sistema corrija os
+campos indicados.
+Extensões:
+2a) Se já existir um posto cadastrado com o mesmo nome e endereço, o sistema exibe
+uma mensagem de erro informando que o posto já está cadastrado e solicita que o
+Dono verifique as informações.
+
+11 - Realizar venda de produtos
+Ator: Frentista
+Fluxo normal:
+1) O cliente se dirige ao frentista para solicitar a compra de produtos.
+2) O frentista apresenta ao cliente os produtos disponíveis para venda.
+3) O cliente escolhe os produtos que deseja comprar.
+4) O frentista verifica se os produtos estão disponíveis em estoque.
+5) O frentista registra a compra dos produtos no sistema do posto de gasolina.
+6) O frentista informa o valor total da compra ao cliente.
+7) O cliente realiza o pagamento dos produtos.
+Extensões:
+2a) Se algum produto escolhido pelo cliente não estiver disponível em estoque, o
+frentista informa ao cliente e sugere uma alternativa ou aguarda a reposição do
+produto em estoque.
